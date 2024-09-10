@@ -2,11 +2,12 @@
 /* Style de base pour petits smartphones*/
     *{
         list-style-type: none;
-    }
+    }    
     
     body {
-        background-color: whitesmoke;
-        margin:10px;
+        display:flex;
+        background-color: white;
+        margin:10px;        
     }
 
     .img {
@@ -15,12 +16,12 @@
         
     }
 
-    h1, h2 {
+    h1, .bloc h2 {
         display: flex;
         justify-content: center;
         align-items: center;                
         color: #2C3E50;
-        margin: 5px;
+        margin: 5px;    
         padding: 20px;
         
     }
@@ -31,7 +32,14 @@
         border: 2px solid;
         border-color: #2C3E50;
         padding: 40px;
-        margin:20px;      
+        margin:auto;
+        margin-top: 40px;      
+    }
+
+    .bloc .p{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
 /* Style pour smartphones moyens ( type iphone ) */
