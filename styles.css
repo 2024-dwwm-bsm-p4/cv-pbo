@@ -1,55 +1,144 @@
-
 /* Style de base pour petits smartphones*/
-    *{
-        list-style-type: none;
-    }    
-    
-    body {        
-        background-image: linear-gradient(to right, #ff7e5f, #feb47b);
-        margin:10px;        
-    }
+* {
+    list-style-type: none;
+    margin:0px;
+    padding: 0px;
+    font-family: Avenir, sans-serif;
+}
 
-    .img {
-        display: flex;
-        justify-content: center;       
-        
-    }
+body {
+    background-image: linear-gradient(to right, #ff7e5f, #feb47b);
+    margin: 10px;
+    font-size: 1em;
+}
 
-    h1, .bloc h2 {
-        text-align: center; 
-        color: #2C3E50;
-        margin: 40px 0 40px 0; 
-    }
-    .bloc {
-        background-color: #ECF0F1;
-        color: #2C3E50;
-        border-radius: 4px ;
-        border: 2px solid;
-        border-color: #2C3E50;
-        padding: 15px;
-        margin-top: 30px;
-        margin-bottom: 30px;        
-        box-shadow: 0px 1px 2px #2C3E50;
-        min-height: 400px;
-          
-    }    
+.img {
+    display: flex;
+    justify-content: center;
+
+}
+
+h1,
+.bloc h2 {
+    text-align: center;
+    color: #2C3E50;
+    margin: 40px 0 40px 0;
+}
+
+.bloc {
+    background-color: #ECF0F1;
+    color: #2C3E50;
+    border-radius: 4px;
+    border: 5px solid;
+    border-color: #2C3E50;
+    padding: 15px;
+    margin-top: 30px;
+    box-shadow: 0px 1px 2px #2C3E50;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.bloc * {
+    align-items: center;
+}
+
+.bloc ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
 
 /* Style pour smartphones moyens ( type iphone ) */
-@media (min-width: 481px) and (max-width: 768px){
+@media (min-width: 481px) and (max-width: 768px) {
     body {
         background-color: whitesmoke;
     }
 }
+
 /* Style pour tablettes */
-@media (min-width: 769px) and (max-width: 1024px){
+@media (min-width: 769px) and (max-width: 1023px) {
     body {
         background-color: whitesmoke;
     }
 }
 
 /* Style pour PC */
-@media (min-width: 1025px){
+@media (min-width: 1024px) {
+
+    .bloc {
+        border-radius: 20px;
+        
+    }
+
     body {
-        background-color: whitesmoke;
+        background-image: linear-gradient(to right, #ff7e5f, #feb47b);
+        margin: 30px;
+        font-size: 1.7em;        
+    }
+
+    
+    .conteneur-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(6, 1fr);        
+    }
+
+
+    .conteneur-grid>div {
+        padding: 20px 0px;  
+        margin: 20px;
+    }
+
+    #blocPhoto {
+        grid-column-start: 3;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+    #blocProfil {
+        
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 4;
+    }
+
+    #blocFormations {
+        grid-column-start: 5;
+        grid-column-end: 7;
+        grid-row-start: 4;
+        grid-row-end: 6;
+    }
+
+    #blocCompetences {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 4;
+        grid-row-end: 6;
+    }
+
+    #blocExperiences {
+        grid-column-start: 5;
+        grid-column-end: 7;
+        grid-row-start: 2;
+        grid-row-end: 4;
+    }
+
+    #blocDivers {
+        grid-column-start: 3;
+        grid-column-end: 5;
+        grid-row-start: 3;
+        grid-row-end: 5;
+    }
+
+    #blocReseaux {
+        grid-column-start: 3;
+        grid-column-end: 5;
+        grid-row-start: 5;
+        grid-row-end: 7;
     }
 }
