@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -10,11 +10,13 @@
 </head>
 
 <body>
+<button id="dark-mode-toggle">Mode étoilé</button>
     <div id="top"></div>
     <div class="container">
         <div class="Photo bloc">
+            <h2>Philippe Bourgeois</h2>
             <img src="docs/singe.jpg" alt="Photo de profil" width="" height="">
-            <h1>Développeur web - web mobile full stack</h1>
+            <h1>Apprenant dev web - web mobile</h1>
         </div>
         <div class="Profil bloc">
             <h2>Profil</h2>
@@ -33,28 +35,14 @@
                 </li>
             </ul>
         </div>
-        <div class="Divers bloc">
-            <h2>Divers</h2>
+        <div class="Formations bloc ">
+            <h2>Formations</h2>
             <ul>
-                <li><strong>Anglais </strong>Intermédiaire</li>
-                <li><strong>Français </strong>Courant</li><br>
-                <li><strong>Permis: </strong>B - Véhicule léger</li><br>
-                <li><strong>Centres d'interet: </strong><br><br>
-                    <ul>
-                        <li>Ebenisterie</li>
-                        <li>Musique</li>
-                        <li>Jardinage</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <div class="Reseaux bloc ">
-            <h2>Reseaux</h2>
-            <ul id="ul-reseaux">
-                <li><a href="https://www.linkedin.com/in/philippe-bourgeois-76662723b/" target="blank" class="bouton">
-                    <i class="fa-brands fa-linkedin"></i></a></li>
-                <li><a href="https://github.com/Pbourgeois62" target="blank" class="bouton">
-                    <i class="fa-brands fa-github"></i></a></li>
+                <ul>
+                    <li><strong>2010: </strong>CAP de Menisier agenceur</li><br>
+                    <li><strong>2008: </strong>CAP d'Ebeniste</li><br>
+                    <li><strong>2005: </strong>BAC scientifique option maths</li><br>
+                </ul>
             </ul>
         </div>
         <div class="Competences bloc ">
@@ -74,21 +62,39 @@
                 <li>Dernière expérience (02/2020 - 05/2022) : <strong>Agent d'entretien des espaces naturels à Rivages propres.</strong><br><br>
                     Experience m'ayant permis de travailler en complète autonomie et parfois avec la responsabilité d'une équipe.</li>
             </ul>
-        </div>
-        <div class="Formations bloc ">
-            <h2>Formations</h2>
+        </div> 
+        <div class="Divers bloc">
+            <h2>Divers</h2>
             <ul>
-                <ul>
-                    <li><strong>2010: </strong>CAP de Menisier agenceur</li><br>
-                    <li><strong>2008: </strong>CAP d'Ebeniste</li><br>
-                    <li><strong>2005: </strong>BAC scientifique option maths</li><br>
-                </ul>
+                <li><strong>Anglais </strong>Intermédiaire</li>
+                <li><strong>Français </strong>Courant</li><br>
+                <li><strong>Permis: </strong>B - Véhicule léger</li><br>
+            </ul>
+            <h2>Centres d'interet:</h2>
+            <ul>
+                <li>Ebenisterie</li>
+                <li>Musique</li>
+                <li>Jardinage</li>
             </ul>
         </div>
+        <div class="Reseaux bloc ">
+            <h2>Reseaux</h2>
+            <ul id="ul-reseaux">
+                <li><a href="https://www.linkedin.com/in/philippe-bourgeois-76662723b/" target="blank" class="bouton">
+                        <i class="fa-brands fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/Pbourgeois62" target="blank" class="bouton">
+                        <i class="fa-brands fa-github"></i></a></li>
+            </ul>
+        </div>           
+
+        <div class="bouton-ancre bouton-ancre-gauche">
+            <a href="#top"><i class="fa-solid fa-chevron-up"></i></a>
+        </div>
+        <div class="bouton-ancre bouton-ancre-droite">
+            <a href="#top"><i class="fa-solid fa-chevron-up"></i></a>
+        </div>
     </div>
-    <div class="bouton-ancre">
-        <a href="#top"><i class="fa-solid fa-chevron-up"></i></a>
-    </div>
+    <script src="scripts.js"></script>
 </body>
 
 </html>
