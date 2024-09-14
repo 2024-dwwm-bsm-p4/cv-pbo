@@ -1,4 +1,23 @@
 /* ------------------------------------------------------Mode general--------------------------------------------------- */
+/* ---------------------variables génériques----------------------- */
+
+:root{
+    --bg: url("docs/bg.jpg");   
+    --color:#2C3E50;
+    --bg-color:rgba(255,255,255,0.7);    
+    --card-shadow-color:black;
+}
+
+/* -----------------------varibles mode sombre------------------------ */
+
+.dark-mode {
+    --bg: url("docs/bg-sombre.jpg");
+    --color:#E0E0E0;
+    --bg-color:#2C3E50;
+    --card-shadow-color:white;
+}
+
+/* ----------------------------------------------------------- */
 
 * {
     list-style-type: none;
@@ -8,15 +27,16 @@
     box-sizing: border-box;
 }
 
-body {    
-    background-image: url("docs/bg");
-    background-size: cover;
-    padding: 10px;
+.dark-mode-toggle {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
-body.dark-mode{
-    background-image:url("docs/bg2");
-    color:white;
+body {    
+    background-image: var(--bg);
+    background-size: cover;
+    padding: 10px;
 }
 
 /* Icones */
@@ -44,6 +64,8 @@ h2 {
     margin-bottom: 10px;
 }
 
+/* --------------------------ul-reseaux--------------------------- */
+
 #ul-reseaux {
     display: flex;
     justify-content: space-around;
@@ -52,39 +74,46 @@ h2 {
     margin-right: 50px;    
     
 }
-#ul-reseaux li{
+#ul-reseaux li {
     transition: transform 0.3s ease;
 
 }
 #ul-reseaux li a{
     cursor: pointer;    
     text-decoration: none;
-    color:whitesmoke;    
+    color:white; 
 }
 
 #ul-reseaux li:hover {
     transform: scale(1.2);
 }
 
-.bloc {
+/* ------------------------------------------------- */
+/* ----------------------------div bloc-------------------------- */
+
+.card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
     min-height: 400px;
-    padding: 10px;
-    margin-top:10px;
-    margin-top:10px;
-    margin-bottom:10px;
-    background-color: rgba(236, 240, 241, 0.7);
-    color: #2C3E50;
-    border-radius: 8px;
-    border: 3px solid;
-    box-shadow: 0px 2px 4px #2C3E50;
+    padding: 20px;
+    margin-top:20px;    
+    margin-bottom:20px;
+    background-color:var(--bg-color);
+    color: var(--color);
+    border-radius: 12px;
+    border: 1px solid;
+    box-shadow: 0px 2px 4px var(--card-shadow-color);
     border-color: #2C3E50;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.bloc ul,
+.card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
 h2 {
     display: flex;
     flex-direction: column;
@@ -92,7 +121,7 @@ h2 {
     align-items: center;
 }
 
-.bloc ul {
+.card ul {
     margin-block: auto;
     padding-left: 0;
     padding-top: auto;
@@ -100,13 +129,20 @@ h2 {
     font-size: clamp(1em, 2.5vw, 1.3em);
 }
 
+.card ul li{
+    margin-bottom:20px;
+}
+
+/* -------------------------------------------------------- */
+/* ----------------------------bouton ancre-------------------------- */
+
 .bouton-ancre {
     background-color: #2C3E50;
     width: 100%;
     height: 50px;
     display: flex;
     justify-content: center;
-    text-align: center;
+    text-align: center;  
     align-items: center;
     border-radius: 10px;
     border-color: whitesmoke;
@@ -114,12 +150,23 @@ h2 {
     box-shadow: 0px 1px 2px #2C3E50;
     text-decoration: none;
     color: whitesmoke;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bouton-ancre:hover{
+    transform: translateY(-15px); 
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); 
 }
 
 .bouton-ancre a {
+    display: block;
+    width: 100%;
+    height: 100%;
     font-size: 1.5em;
     color: whitesmoke;
     text-decoration: none;
+    background-color: inherit;
+    border-radius: inherit;
 }
 
 .bouton-ancre-droite {
@@ -128,13 +175,19 @@ h2 {
 
 /*--------------------------------------------------- Mode bureau---------------------------------------------------- */
 
-@media (min-width: 1023px) {
+.card{
+    box-shadow: 0px 4px 8px var(--card-shadow-color);
+}
+@media (min-width: 1023px) {    
+
+    /* -----------------------------------CSS Grid------------------------------------- */
+    
     .container {
         padding: 0px;
         display: grid;
         grid-template-columns: repeat(6, 1fr);
         grid-template-rows: repeat(6, 1fr);
-        gap: 30px;
+        gap: 50px;
         grid-auto-flow: row;
     }
 
@@ -174,10 +227,19 @@ h2 {
     .bouton-ancre-droite {
         grid-area: 6 / 5 / 7 / 7;
         justify-self: center;
-    }
-
-    .bouton-ancre-droite {
         display: block;
     }
-
+    
+    #dark-mode-toggle {
+        grid-area: 1 / 5 / 2 / 7; 
+        justify-self: center;         
+        margin:50px;
+        background-color: #2C3E50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        border-radius:10px;     
+    }    
 }
