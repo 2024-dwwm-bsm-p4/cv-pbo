@@ -11,13 +11,22 @@
 
 <body>
     <div id="top"></div>
+    <label>
+        <input type="checkbox" class="theme-checkbox" id="dark-mode-toggle">
+    </label>
+    <!-- <div class="dark-mode-toggle">
+        <div class="dark-mode-toggle-item">
+            
+        </div>
+    </div> -->
+
     <div class="container">
-        <button id="dark-mode-toggle">Mode sombre</button>
         <div class="Photo card">
             <h2>Philippe Bourgeois</h2>
             <img src="docs/singe.jpg" alt="Photo de profil" width="" height="">
             <h1>Apprenant dev web - web mobile</h1>
         </div>
+        
         <div class="Profil card">
             <h2>Profil</h2>
             <ul>
@@ -85,10 +94,11 @@
         </div>
 
         <div class="bouton-ancre bouton-ancre-gauche">
-            <a href="#top"><i class="fa-solid fa-chevron-up"></i></a>
+            <a href="#top" id="retour-top-gauche"><i class="fa-solid fa-chevron-up"></i></a>
         </div>
+
         <div class="bouton-ancre bouton-ancre-droite">
-            <a href="#top"><i class="fa-solid fa-chevron-up"></i></a>
+            <a href="#top" id="retour-top-droite" title="Retour en haut de page"><i class="fa-solid fa-chevron-up"></i></a>
         </div>
     </div>
     <script src="scripts.js"></script>
