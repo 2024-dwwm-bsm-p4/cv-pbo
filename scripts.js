@@ -1,3 +1,10 @@
+//-----------------------------script flip carte------------------------------------------
+
+function flipCard(card) {
+    card.querySelector('.card-inner').classList.toggle('is-flipped');
+  }
+
+
 // ----------------------------script bouton mode sombre---------------------------------------
 
 

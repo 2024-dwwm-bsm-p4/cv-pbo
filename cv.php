@@ -14,11 +14,6 @@
     <label>
         <input type="checkbox" class="theme-checkbox" id="dark-mode-toggle">
     </label>
-    <!-- <div class="dark-mode-toggle">
-        <div class="dark-mode-toggle-item">
-            
-        </div>
-    </div> -->
 
     <div class="container">
         <div class="Photo card">
@@ -26,24 +21,32 @@
             <img src="docs/singe.jpg" alt="Photo de profil" width="" height="">
             <h1>Apprenant dev web - web mobile</h1>
         </div>
-        
-        <div class="Profil card">
-            <h2>Profil</h2>
-            <ul>
-                <li>
-                    <i class="fa-solid fa-book fa-beat"></i><br>En formation de développeur web / web-mobil full stack chez Simplon.
-                </li>
-                <li>
-                    <i class="fa-solid fa-house fa-beat"></i><br> 53 rue Ferdinand Buisson 62200 boulogne sur mer
-                </li>
-                <li>
-                    <i class="fa-solid fa-phone fa-beat"></i><br>0766591470
-                </li>
-                <li>
-                    <i class="fa-solid fa-envelope fa-beat"></i><br>philippe.bourgeois62@laposte.net
-                </li>
-            </ul>
+
+        <div class="Profil card" onclick="flipCard(this)">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="../docs/planète2.jpg">
+                </div>
+                <div class="card-back">
+                    <h2>Profil</h2>
+                    <ul>
+                        <li>
+                            <i class="fa-solid fa-book fa-beat"></i><br>En formation de développeur web / web-mobil full stack chez Simplon.
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-house fa-beat"></i><br> 53 rue Ferdinand Buisson 62200 boulogne sur mer
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone fa-beat"></i><br>0766591470
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope fa-beat"></i><br>philippe.bourgeois62@laposte.net
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
+
         <div class="Formations card">
             <h2>Formations</h2>
             <ul>
@@ -53,12 +56,12 @@
             </ul>
         </div>
         <div class="Competences card">
-            <h2>Compétences</h2>
+            <h2>Savoir-être</h2>
             <ul>
                 <li>Autonomie</li>
                 <li>Capacité de décision</li>
                 <li>Curiosité</li>
-                <li>Créactivité</li>
+                <li>Créativité</li>
                 <li>Rigueur</li>
                 <li>Travail en équipe</li>
             </ul>
