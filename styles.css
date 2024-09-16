@@ -288,6 +288,7 @@ h2 {
   }
 
   .card-back {
+    
     flex-direction: column;      
     color: var(--color);
     transform: rotateY(180deg);
