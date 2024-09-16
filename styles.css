@@ -11,7 +11,7 @@
 /* -----------------------varibles mode sombre------------------------ */
 
 .dark-mode {
-    --bg: url("docs/bg-sombre.jpg");
+    --bg: url("docs/bg2.jpg");
     --color: #E0E0E0;
     --bg-color: #2C3E50;
     --shadow-color: white;
@@ -19,7 +19,7 @@
 
 /* ----------------------------------------------------------- */
 
-* {
+* { 
     list-style-type: none;
     font-family: Avenir, sans-serif;
     margin: 0;

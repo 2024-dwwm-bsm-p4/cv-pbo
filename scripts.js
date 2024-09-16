@@ -24,20 +24,26 @@ toggleButton.addEventListener('click', () => {
 // -------------------------------script bouton ancre-------------------------------
 
 
-if (window.innerWidth >= 768) {
-    const retourTopDroite = document.getElementById('retour-top-droite',);
-    const retourTopGauche = document.getElementById('retour-top-gauche',);
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.innerWidth >= 768) {  
+        const retourTopDroite = document.getElementById('retour-top-droite');
+        const retourTopGauche = document.getElementById('retour-top-gauche');
 
-    function retourTop(event) {
-        event.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+        if (retourTopDroite && retourTopGauche) {  // Vérifie si les éléments existent
+            function retourTop(event) {
+                event.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+
+            // Ajoute des écouteurs d'événements aux boutons
+            retourTopDroite.addEventListener('click', retourTop);
+            retourTopGauche.addEventListener('click', retourTop);
+        }
     }
-}
-// Ajoute un écouteur d'événement au bouton
-retourTopDroite.addEventListener('click', retourTop);
-retourTopGauche.addEventListener('click', retourTop);
+});
+
 
 
