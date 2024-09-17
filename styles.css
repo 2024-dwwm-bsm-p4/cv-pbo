@@ -59,17 +59,12 @@ h2 {
 
 /* ----------------Icones------------- */
 
-.fa-solid {
-  font-size: 1.5em;
-  padding-bottom: 10px;
+svg {
+  width: clamp(1.5em, 2vh, 10em);
+  height: clamp(1.5em, 2vh, 10em); 
+  color: white;
 }
 
-.fa-brands {
-  font-size: 3em;
-  color: var(--color);
-  text-shadow: -2px 0 var(--bg-color), 0 2px var(--bg-color),
-    2px 0 var(--bg-color), 0 -2px var(--bg-color);
-}
 
 .Photo img {
   width: 100%;
@@ -110,7 +105,7 @@ h2 {
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
-  min-height: 400px;
+  min-height: clamp(400px, 600px, 800px);
   margin-top: 20px;
   margin-bottom: 20px;
   background-color: var(--bg-color);
