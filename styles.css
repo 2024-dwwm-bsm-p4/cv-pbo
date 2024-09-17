@@ -2,33 +2,33 @@
 /* ---------------------variables génériques----------------------- */
 
 :root {
-  --bg: url("docs/bg.jpg");
+  --bg: url("docs/bg.webp");
   --color: #2c3e50;
   --bg-color: rgba(255, 255, 255, 0.7);
   --shadow-color: black;
-  --front-1: url("docs/planète1.jpg");
-  --front-2: url("docs/planète2.jpg");
-  --front-3: url("docs/planète3.jpg");
-  --front-4: url("docs/planète4.jpg");
-  --front-5: url("docs/planète5.jpg");
-  --front-6: url("docs/planète6.jpg");
+  --front-1: url("docs/planète1.webp");
+  --front-2: url("docs/planète2.webp");
+  --front-3: url("docs/planète3.webp");
+  --front-4: url("docs/planète4.webp");
+  --front-5: url("docs/planète5.webp");
+  --front-6: url("docs/planète6.webp");
   --front-7: none;
 }
 
 /* -----------------------varibles mode sombre------------------------ */
 
 .dark-mode {
-  --bg: url("docs/bg2.jpg");
+  --bg: url("docs/bg2.webp");
   --color: #e0e0e0;
   --bg-color: #2c3e50;
   --shadow-color: white;
-  --front-1: url("docs/planète1.jpg");
-  --front-2: url("docs/planète2.jpg");
-  --front-3: url("docs/planète3.jpg");
-  --front-4: url("docs/planète4.jpg");
-  --front-5: url("docs/planète5.jpg");
-  --front-6: url("docs/planète6.jpg");
-  --front-7: url("docs/planète7.jpg");
+  --front-1: url("docs/planète1.webp");
+  --front-2: url("docs/planète2.webp");
+  --front-3: url("docs/planète3.webp");
+  --front-4: url("docs/planète4.webp");
+  --front-5: url("docs/planète5.webp");
+  --front-6: url("docs/planète6.webp");
+  --front-7: url("docs/planète7.webp");
 }
 
 /* ----------------------------------------------------------- */
