@@ -6,12 +6,12 @@
   --color: #2c3e50;
   --bg-color: rgba(255, 255, 255, 0.7);
   --shadow-color: black;
-  --front-1: url("docs/planète1.webp");
-  --front-2: url("docs/planète2.webp");
-  --front-3: url("docs/planète3.webp");
-  --front-4: url("docs/planète4.webp");
-  --front-5: url("docs/planète5.webp");
-  --front-6: url("docs/planète6.webp");
+  --front-1: url("docs/poisson1.webp");
+  --front-2: url("docs/poisson2.webp");
+  --front-3: url("docs/poisson3.webp");
+  --front-4: url("docs/poisson4.webp");
+  --front-5: url("docs/poisson5.webp");
+  --front-6: url("docs/poisson6.webp");
   --front-7: none;
 }
 
@@ -105,13 +105,13 @@ svg {
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
-  min-height: clamp(400px, 600px, 800px);
+  min-height: 400px;
   margin-top: 20px;
   margin-bottom: 20px;
   background-color: var(--bg-color);
   color: var(--color);
-  border-radius: 12px;
-  overflow: hidden;
+  border-radius: 12px;  
+  /* overflow: hidden; */
   border: 1px solid;
   box-shadow: 0px 2px 4px var(--shadow-color);
   border-color: #2c3e50;
@@ -123,7 +123,7 @@ svg {
 
 .no-flip .card-back {
   transform: none; /* Afficher directement la face arrière */
-  backface-visibility: visible; /* S'assurer que la face arrière est visible */
+  backface-visibility: visible; /* S'assurer que la face arrière est visible */  
 }
 
 .no-flip .card-front {
@@ -272,6 +272,7 @@ svg {
     transition: transform 0.8s;
     transform-style: preserve-3d;
     display: block;
+    
     /* Assure que les enfants se comportent en 3D */
   }
 
@@ -288,14 +289,17 @@ svg {
     backface-visibility: hidden;
     /* Masque la face arrière quand non visible */
     display: flex;
-    justify-content: center;
+    justify-content: center; 
+       
   }
   
   .card-front {
     min-height: 400px;
+    
   }
 
   .card-front img {
+    
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -309,6 +313,7 @@ svg {
     flex-direction: column;
     color: var(--color);
     transform: rotateY(180deg);
+    
     /* Met la face arrière à l'envers initialement */
   }
 
@@ -336,6 +341,8 @@ svg {
     background-image: var(--front-7);
     background-position: center;
     background-size: 100%;
+    background-size:cover;
+    padding:30px;
   }
 
   .Profil {
@@ -346,6 +353,7 @@ svg {
     background-image: var(--front-1);
     background-position: center;
     background-size: 100%;
+    background-size:cover;
   }
 
   .Divers {
@@ -356,6 +364,7 @@ svg {
     background-image: var(--front-2);
     background-position: center;
     background-size: 100%;
+    background-size:cover;
   }
 
   .Reseaux {
@@ -366,6 +375,7 @@ svg {
     background-image: var(--front-3);
     background-position: center;
     background-size: 100%;
+    background-size:cover;
   }
 
   .Competences {
@@ -376,6 +386,7 @@ svg {
     background-image: var(--front-4);
     background-position: center;
     background-size: 100%;
+    background-size:cover;
   }
 
   .Experiences {
@@ -386,6 +397,7 @@ svg {
     background-image: var(--front-5);
     background-position: center;
     background-size: 100%;
+    background-size:cover;
   }
 
   .Formations {
@@ -396,6 +408,7 @@ svg {
     background-image: var(--front-6);
     background-position: center;
     background-size: 100%;
+    background-size:cover;    
   }
 
   .bouton-ancre-gauche {
