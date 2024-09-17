@@ -2,6 +2,7 @@
 /* ---------------------variables génériques----------------------- */
 
 :root {
+  /* --bg: url("docs/fondMarin.jpeg"); */
   --bg: url("docs/bg.webp");
   --color: #2c3e50;
   --bg-color: rgba(255, 255, 255, 0.7);
@@ -44,27 +45,16 @@
 body {
   background-image: var(--bg);
   background-size: cover;
-  padding: 10px;
-}
-
-h2 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: clamp(1.4em, 3.5vw, 2em);
-  margin-top: 60px;
-  margin-bottom: 10px;
+  padding: clamp(10px, 15px, 30px);
 }
 
 /* ----------------Icones------------- */
 
 svg {
   width: clamp(1.5em, 2vh, 10em);
-  height: clamp(1.5em, 2vh, 10em); 
+  height: clamp(1.5em, 2vh, 10em);
   color: white;
 }
-
 
 .Photo img {
   width: 100%;
@@ -77,7 +67,7 @@ svg {
 
 /* --------------------------ul-reseaux--------------------------- */
 
-#ul-reseaux {
+/* #ul-reseaux {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
@@ -95,7 +85,7 @@ svg {
 
 #ul-reseaux li:hover {
   transform: scale(1.2);
-}
+} */
 
 /* ------------------------------------------------- */
 /* ----------------------------div bloc-------------------------- */
@@ -110,29 +100,68 @@ svg {
   margin-bottom: 20px;
   background-color: var(--bg-color);
   color: var(--color);
-  border-radius: 12px;  
+  border-radius: 12px;
   /* overflow: hidden; */
   border: 1px solid;
   box-shadow: 0px 2px 4px var(--shadow-color);
   border-color: #2c3e50;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  h2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(1.4em, 3.5vw, 2em);
+    margin-top: 60px;
+    margin-bottom: 10px;
+  }
+  ul li {
+    margin-bottom: 15px;
+  }
+
+  #ul-reseaux {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+
+  #ul-reseaux li {
+    transition: transform 0.3s ease;
+    transform: scale(1.5);
+  }
+
+  #ul-reseaux li a {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+  }
+
+  #ul-reseaux li:hover {
+    transform: scale(2);
+  }
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 }
 .card-front img {
   display: none;
 }
 
 .no-flip .card-back {
-  transform: none; /* Afficher directement la face arrière */
-  backface-visibility: visible; /* S'assurer que la face arrière est visible */  
+  display: flex;
+  align-items:space-around;
+  transform: none;
+  /* Afficher directement la face arrière */
+  backface-visibility: visible;
+  /* S'assurer que la face arrière est visible */
+  
 }
 
 .no-flip .card-front {
-  display: none; /* Cacher la face avant si tu veux uniquement montrer la face arrière */
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  display: none;
+  /* Cacher la face avant si tu veux uniquement montrer la face arrière */
 }
 
 .Photo {
@@ -146,27 +175,64 @@ svg {
   margin-right: 20px;
 }
 
-.card ul li {
-  margin-bottom: 15px;
-}
-
 /* -------------------------------------------------------- */
 /* ----------------------------boutons-------------------------- */
 
-.bouton-ancre {
-  background: linear-gradient(45deg, #2c3e50, black);
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+  .bouton-ancre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #2c3e50, black);
+    width: 30%;
+    height: 100%;
+    border-radius: 12px;
+    border: 2px solid whitesmoke;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  .bouton-ancre:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, black, #2c3e50);
+  }
+
+  .bouton-ancre a {
+    width: 100%;
+    height: 100%;
+    font-size: 1.5em;
+    color: whitesmoke;
+    text-decoration: none;
+    background-color: inherit;
+    border-radius: inherit;
+    text-align: center;
+    line-height: 50px;
+  }
+}
+
+/* .bouton-ancre {
+  background: linear-gradient(45deg, #2c3e50, black);
+  width: 100%;
+  height: 50px;  
   border-radius: 12px;
   border: 2px solid whitesmoke;
   color: whitesmoke;
   text-decoration: none;
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
-}
+} */
 
 .bouton-ancre:hover {
   transform: translateY(-8px) scale(1.05);
@@ -175,7 +241,6 @@ svg {
 }
 
 .bouton-ancre a {
-  display: block;
   width: 100%;
   height: 100%;
   font-size: 1.5em;
@@ -185,10 +250,6 @@ svg {
   border-radius: inherit;
   text-align: center;
   line-height: 50px;
-}
-
-.bouton-ancre-droite {
-  display: none;
 }
 
 .theme-checkbox {
@@ -266,13 +327,10 @@ svg {
   }
 
   .card-inner {
-    position: relative;
     width: 100%;
     height: 100%;
     transition: transform 0.8s;
     transform-style: preserve-3d;
-    display: block;
-    
     /* Assure que les enfants se comportent en 3D */
   }
 
@@ -289,36 +347,30 @@ svg {
     backface-visibility: hidden;
     /* Masque la face arrière quand non visible */
     display: flex;
-    justify-content: center; 
-       
-  }
-  
-  .card-front {
-    min-height: 400px;
-    
+    justify-content: center;
+    border-radius: 12px;
   }
 
   .card-front img {
-    
+    /* Ajuste l'image pour qu'elle remplisse la face avant */
+
     width: 100%;
     height: 100%;
     object-fit: cover;
     padding: 0;
     margin: 0;
-    border-radius: inherit;
-    /* Ajuste l'image pour qu'elle remplisse la face avant */
   }
 
   .card-back {
     flex-direction: column;
     color: var(--color);
     transform: rotateY(180deg);
-    
     /* Met la face arrière à l'envers initialement */
   }
 
   .is-flipped {
     transform: rotateY(180deg);
+    /* Rotation en 3D à 180° */
   }
 
   .body {
@@ -341,8 +393,8 @@ svg {
     background-image: var(--front-7);
     background-position: center;
     background-size: 100%;
-    background-size:cover;
-    padding:30px;
+    background-size: cover;
+    padding: 30px;
   }
 
   .Profil {
@@ -353,7 +405,7 @@ svg {
     background-image: var(--front-1);
     background-position: center;
     background-size: 100%;
-    background-size:cover;
+    background-size: cover;
   }
 
   .Divers {
@@ -364,7 +416,7 @@ svg {
     background-image: var(--front-2);
     background-position: center;
     background-size: 100%;
-    background-size:cover;
+    background-size: cover;
   }
 
   .Reseaux {
@@ -375,7 +427,7 @@ svg {
     background-image: var(--front-3);
     background-position: center;
     background-size: 100%;
-    background-size:cover;
+    background-size: cover;
   }
 
   .Competences {
@@ -386,7 +438,7 @@ svg {
     background-image: var(--front-4);
     background-position: center;
     background-size: 100%;
-    background-size:cover;
+    background-size: cover;
   }
 
   .Experiences {
@@ -397,7 +449,7 @@ svg {
     background-image: var(--front-5);
     background-position: center;
     background-size: 100%;
-    background-size:cover;
+    background-size: cover;
   }
 
   .Formations {
@@ -408,17 +460,6 @@ svg {
     background-image: var(--front-6);
     background-position: center;
     background-size: 100%;
-    background-size:cover;    
-  }
-
-  .bouton-ancre-gauche {
-    grid-area: 6 / 1 / 7 / 3;
-    justify-self: center;
-  }
-
-  .bouton-ancre-droite {
-    grid-area: 6 / 5 / 7 / 7;
-    justify-self: center;
-    display: block;
+    background-size: cover;
   }
 }

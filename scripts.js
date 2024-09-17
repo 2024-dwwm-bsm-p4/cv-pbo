@@ -1,15 +1,31 @@
 //-----------------------------script flip carte------------------------------------------
 
 function flipCard(card) {
-    if (innerWidth >=1024){
-    card.querySelector('.card-inner').classList.toggle('is-flipped');
+    if (window.innerWidth >= 1024) {
+      card.querySelector('.card-inner').classList.toggle('is-flipped');
+    } else {
+      card.classList.add('no-flip');
+    }
   }
-  else {
-    // Si flipCard n'est pas actif en mode téléphone, on affiche la face arrière directement
-    card.classList.add('no-flip');
-  }  
-}
-
+  
+  window.addEventListener('resize', () => {
+    document.querySelectorAll('.card').forEach(card => {
+      if (window.innerWidth < 1024) {
+        card.classList.add('no-flip');
+      } else {
+        card.classList.remove('no-flip');
+      }
+    });
+  });
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.card').forEach(card => {
+      if (window.innerWidth < 1024) {
+        card.classList.add('no-flip');
+      }
+    });
+  });
+  
 
 // ----------------------------script bouton mode sombre---------------------------------------
 
@@ -39,11 +55,10 @@ toggleButton.addEventListener('click', () => {
 
 document.addEventListener('DOMContentLoaded', function() {
     if (window.innerWidth >= 768) {  
-        const retourTopDroite = document.getElementById('retour-top-droite');
-        const retourTopGauche = document.getElementById('retour-top-gauche');
+        const retourTopButton = document.getElementById('retour-top'); // Renommé pour éviter le conflit      
 
-        if (retourTopDroite && retourTopGauche) {  // Vérifie si les éléments existent
-            function retourTop(event) {
+        if (retourTopButton) {  // Vérifie si l'élément existe
+            function scrollToTop(event) {
                 event.preventDefault();
                 window.scrollTo({
                     top: 0,
@@ -51,12 +66,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
 
-            // Ajoute des écouteurs d'événements aux boutons
-            retourTopDroite.addEventListener('click', retourTop);
-            retourTopGauche.addEventListener('click', retourTop);
+            // Ajoute un écouteur d'événement au bouton
+            retourTopButton.addEventListener('click', scrollToTop);            
         }
     }
 });
+
 
 
 
