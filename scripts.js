@@ -1,8 +1,14 @@
 //-----------------------------script flip carte------------------------------------------
 
 function flipCard(card) {
+    if (innerWidth >=1024){
     card.querySelector('.card-inner').classList.toggle('is-flipped');
   }
+  else {
+    // Si flipCard n'est pas actif en mode téléphone, on affiche la face arrière directement
+    card.classList.add('no-flip');
+  }  
+}
 
 
 // ----------------------------script bouton mode sombre---------------------------------------
