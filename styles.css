@@ -16,7 +16,7 @@
   --front-7: none;
 }
 
-/* -----------------------varibles mode sombre------------------------ */
+/* -----------------------variables mode sombre------------------------ */
 
 .dark-mode {
   --bg: url("docs/bg2.webp");
@@ -45,7 +45,7 @@
 body {
   background-image: var(--bg);
   background-size: cover;
-  padding: clamp(10px, 15px, 30px);
+  padding: clamp(10px, 5vw, 40px);
 }
 
 /* ----------------Icones------------- */
@@ -54,41 +54,18 @@ svg {
   width: clamp(1.5em, 2vh, 10em);
   height: clamp(1.5em, 2vh, 10em);
   color: white;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
 }
 
 .Photo img {
   width: 100%;
-  width: clamp(1em 2vh 1.5em);
   height: auto;
   object-fit: cover;
   border-radius: 50%;
   border: solid, var(--color);
 }
 
-/* --------------------------ul-reseaux--------------------------- */
-
-/* #ul-reseaux {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-}
-
-#ul-reseaux li {
-  transition: transform 0.3s ease;
-}
-
-#ul-reseaux li a {
-  cursor: pointer;
-  text-decoration: none;
-  color: white;
-}
-
-#ul-reseaux li:hover {
-  transform: scale(1.2);
-} */
-
-/* ------------------------------------------------- */
-/* ----------------------------div bloc-------------------------- */
+/* ----------------------------div card-------------------------- */
 
 .card {
   display: flex;
@@ -101,21 +78,25 @@ svg {
   background-color: var(--bg-color);
   color: var(--color);
   border-radius: 12px;
-  /* overflow: hidden; */
+  overflow: hidden;
   border: 1px solid;
   box-shadow: 0px 2px 4px var(--shadow-color);
   border-color: #2c3e50;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   h2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     font-size: clamp(1.4em, 3.5vw, 2em);
-    margin-top: 60px;
+    margin-top: 50px;
     margin-bottom: 10px;
   }
+
+  ul {
+    margin-block: auto;
+    font-size: clamp(1em, 2.5vw, 1.2em);
+    margin-left: clamp(10px, 2vw, 30px);
+    margin-right: clamp(10px, 2vw, 30px);
+  }
+
   ul li {
     margin-bottom: 15px;
   }
@@ -124,58 +105,44 @@ svg {
     display: flex;
     justify-content: space-around;
     flex-direction: row;
-  }
 
-  #ul-reseaux li {
-    transition: transform 0.3s ease;
-    transform: scale(1.5);
-  }
+    li {
+      transition: transform 0.3s ease;
+      transform: scale(1.5);
 
-  #ul-reseaux li a {
-    cursor: pointer;
-    text-decoration: none;
-    color: white;
-  }
+      a {
+        cursor: pointer;
+        text-decoration: none;
+        color: white;
+      }
+    }
 
-  #ul-reseaux li:hover {
-    transform: scale(2);
+    li:hover {
+      transform: scale(2);
+    }
   }
 }
+
+.card-back {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 400px;
+}
+
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 }
+
 .card-front img {
   display: none;
-}
-
-.no-flip .card-back {
-  display: flex;
-  align-items:space-around;
-  transform: none;
-  /* Afficher directement la face arrière */
-  backface-visibility: visible;
-  /* S'assurer que la face arrière est visible */
-  
-}
-
-.no-flip .card-front {
-  display: none;
-  /* Cacher la face avant si tu veux uniquement montrer la face arrière */
 }
 
 .Photo {
   margin-top: 0;
 }
 
-.card ul {
-  margin-block: auto;
-  font-size: clamp(1em, 2.5vw, 1.3em);
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-/* -------------------------------------------------------- */
 /* ----------------------------boutons-------------------------- */
 
 footer {
@@ -222,34 +189,10 @@ footer {
   }
 }
 
-/* .bouton-ancre {
-  background: linear-gradient(45deg, #2c3e50, black);
-  width: 100%;
-  height: 50px;  
-  border-radius: 12px;
-  border: 2px solid whitesmoke;
-  color: whitesmoke;
-  text-decoration: none;
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease-in-out;
-} */
-
 .bouton-ancre:hover {
   transform: translateY(-8px) scale(1.05);
   box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.3);
   background: linear-gradient(45deg, black, #2c3e50);
-}
-
-.bouton-ancre a {
-  width: 100%;
-  height: 100%;
-  font-size: 1.5em;
-  color: whitesmoke;
-  text-decoration: none;
-  background-color: inherit;
-  border-radius: inherit;
-  text-align: center;
-  line-height: 50px;
 }
 
 .theme-checkbox {
@@ -330,8 +273,7 @@ footer {
     width: 100%;
     height: 100%;
     transition: transform 0.8s;
-    transform-style: preserve-3d;
-    /* Assure que les enfants se comportent en 3D */
+    transform-style: preserve-3d; /* Assure que les enfants se comportent en 3D */
   }
 
   .card.is-flipped .card-inner {

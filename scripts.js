@@ -3,21 +3,9 @@
 function flipCard(card) {
     if (window.innerWidth >= 1024) {
       card.querySelector('.card-inner').classList.toggle('is-flipped');
-    } else {
-      card.classList.add('no-flip');
-    }
-  }
-  
-  window.addEventListener('resize', () => {
-    document.querySelectorAll('.card').forEach(card => {
-      if (window.innerWidth < 1024) {
-        card.classList.add('no-flip');
-      } else {
-        card.classList.remove('no-flip');
-      }
-    });
-  });
-  
+    }     
+  } 
+ 
   document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.card').forEach(card => {
       if (window.innerWidth < 1024) {
