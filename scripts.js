@@ -1,65 +1,58 @@
-//-----------------------------script flip carte------------------------------------------
+//-----------------------------flip card script------------------------------------------
 
 function flipCard(card) {
-    if (window.innerWidth >= 1024) {
-      card.querySelector('.card-inner').classList.toggle('is-flipped');
-    }     
-  } 
- 
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.card').forEach(card => {
-      if (window.innerWidth < 1024) {
-        card.classList.add('no-flip');
-      }
-    });
+  if (window.innerWidth >= 1024) {
+    card.querySelector('.card-inner').classList.toggle('is-flipped');
+  }     
+} 
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.card').forEach(card => {
+    if (window.innerWidth < 1024) {
+      card.classList.add('no-flip');
+    }
   });
-  
+});
 
-// ----------------------------script bouton mode sombre---------------------------------------
-
+// ----------------------------dark mode button script---------------------------------------
 
 const toggleButton = document.getElementById('dark-mode-toggle');
 const body = document.body;
 
-// Vérifier si le mode sombre est déjà activé dans localStorage
+// Check if dark mode is already enabled in localStorage
 if (localStorage.getItem('theme') === 'dark') {
-    body.classList.add('dark-mode');
+  body.classList.add('dark-mode');
 }
 
-// Écouter les clics sur le bouton pour basculer entre les modes
+// Listen for clicks on the button to toggle between modes
 toggleButton.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
+  body.classList.toggle('dark-mode');
 
-    // Sauvegarder le thème dans localStorage
-    if (body.classList.contains('dark-mode')) {
-        localStorage.setItem('theme', 'dark');
-    } else {
-        localStorage.setItem('theme', 'light');
-    }
+  // Save the theme in localStorage
+  if (body.classList.contains('dark-mode')) {
+      localStorage.setItem('theme', 'dark');
+  } else {
+      localStorage.setItem('theme', 'light');
+  }
 });
 
-// -------------------------------script bouton ancre-------------------------------
-
+// -------------------------------anchor button script-------------------------------
 
 document.addEventListener('DOMContentLoaded', function() {
-    if (window.innerWidth >= 768) {  
-        const retourTopButton = document.getElementById('retour-top'); // Renommé pour éviter le conflit      
+  if (window.innerWidth >= 768) {  
+      const retourTopButton = document.getElementById('retour-top'); // Renamed to avoid conflict      
 
-        if (retourTopButton) {  // Vérifie si l'élément existe
-            function scrollToTop(event) {
-                event.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            }
+      if (retourTopButton) {  // Check if the element exists
+          function scrollToTop(event) {
+              event.preventDefault();
+              window.scrollTo({
+                  top: 0,
+                  behavior: 'smooth'
+              });
+          }
 
-            // Ajoute un écouteur d'événement au bouton
-            retourTopButton.addEventListener('click', scrollToTop);            
-        }
-    }
+          // Add an event listener to the button
+          retourTopButton.addEventListener('click', scrollToTop);            
+      }
+  }
 });
-
-
-
-
