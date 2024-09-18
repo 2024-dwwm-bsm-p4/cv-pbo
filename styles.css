@@ -2,8 +2,7 @@
 /* ---------------------generic vars----------------------- */
 
 :root {
-  /* --bg: url("docs/fondMarin.jpeg"); */
-  --bg: url("docs/bg.webp");
+  --bg: url("docs/fondMarin.webp");  
   --color: #2c3e50;
   --bg-color: rgba(255, 255, 255, 0.7);
   --shadow-color: black;
@@ -21,7 +20,7 @@
 .dark-mode {
   --bg: url("docs/bg2.webp");
   --color: #e0e0e0;
-  --bg-color: #2c3e50;
+  --bg-color: rgba(44, 62, 80, 0.7);
   --shadow-color: white;
   --front-1: url("docs/planète1.webp");
   --front-2: url("docs/planète2.webp");
@@ -29,14 +28,14 @@
   --front-4: url("docs/planète4.webp");
   --front-5: url("docs/planète5.webp");
   --front-6: url("docs/planète6.webp");
-  --front-7: url("docs/planète7.webp");
+  --front-7: none;
 }
 
 /* ----------------------------------------------------------- */
 
 * {
   list-style-type: none;
-  font-family: Avenir, sans-serif;
+  font-family: Avenir, sans-serif;  
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -53,7 +52,7 @@ body {
 svg {
   width: clamp(1.5em, 2vh, 10em);
   height: clamp(1.5em, 2vh, 10em);
-  color: white;
+  color: var(--color);
   filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
 }
 
@@ -82,8 +81,8 @@ svg {
   border: 1px solid;
   box-shadow: 0px 2px 4px var(--shadow-color);
   border-color: #2c3e50;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
+  transition: transform 0.3s ease, box-shadow 0.3s ease;  
+  
   h2 {
     font-size: clamp(1.4em, 3.5vw, 2em);
     margin-top: 50px;
@@ -113,7 +112,7 @@ svg {
       a {
         cursor: pointer;
         text-decoration: none;
-        color: white;
+        color: var(--color);
       }
     }
 
@@ -122,12 +121,27 @@ svg {
     }
   }
 }
+.card-inner {
+  height:400px;
+  display: flex;
+  flex-direction: column;  
+  justify-content: space-around;
+}
+
+.card-inner ul {
+  margin-block: auto;
+}
 
 .card-back {
+  min-height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 400px;
+  
+}
+
+.card-front h2 {
+  display: none;
 }
 
 .card:hover {
@@ -157,7 +171,7 @@ footer {
     align-items: center;
     justify-content: center;
     background: linear-gradient(45deg, #2c3e50, black);
-    width: 30%;
+    width: 388px;
     height: 100%;
     border-radius: 12px;
     border: 2px solid whitesmoke;
@@ -196,7 +210,7 @@ footer {
 }
 
 .theme-checkbox {
-  margin: 20px;
+  margin-bottom: 10px;
   --toggle-size: 16px;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -267,7 +281,7 @@ footer {
 @media (min-width: 1024px) {
   .card {
     box-shadow: 0px 4px 8px var(--shadow-color);
-  }
+  }  
 
   .card-inner {
     width: 100%;
@@ -291,6 +305,21 @@ footer {
     display: flex;
     justify-content: center;
     border-radius: 12px;
+    h2{
+      display: none;
+    }
+  }
+
+  .card-front h2{
+    position:absolute;
+    display: block;
+    background-color:var(--bg-color);
+    border-radius:12px;
+    border-color:var(--color);
+    border: solid 2px;
+    padding: 10px 20px;
+    box-shadow: 0px 2px 4px var(--shadow-color);
+    opacity: 0.8;
   }
 
   .card-front img {
@@ -303,8 +332,8 @@ footer {
     margin: 0;
   }
 
-  .card-back {
-    flex-direction: column;
+  .card-back {    
+    flex-direction: column;    
     color: var(--color);
     transform: rotateY(180deg);
     /* flips back 180°*/
